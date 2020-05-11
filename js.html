@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styleheet" type="text/css" href="js.css"/>
+    <title>Document</title>
+
+</head>
+<body>
+    <p id="demo">js演示</p>
+    <!--按钮调用js-->
+    <button type="button" onclick='document.getElementById("demo").innerHTML="hello javascript"'>按钮调用</button>
+
+    <!--函数调用js-->
+    <button type="button" onclick="myfunction()">函数调用js</button>
+
+    <!--js函数-->
+    <script>
+        function myfunction() {
+            document.getElementById("demo").innerHTML="hello javascript"
+        }
+    </script>
+
+    <button type="button" onclick='window.alert("nb")'>弹窗</button>
+    
+    <!--对象 -->
+    <p id="demoduixiang">对象示例</p>
+    <button type="button" onclick='document.getElementById("demoduixiang").innerHTML= x.name + " " + x.sex + " " + x.age'>对象</button>
+    <script>
+        var x = {
+        name : "wen",
+        sex : "male",
+        age : 22,
+    }
+    </script>
+
+    <!--方法-->
+    <p id="demofangfa">方法示例</p>
+    <button type="button" onclick='document.getElementById("demofangfa").innerHTML = x.final()'>方法</button>
+    <script>
+        var x = {
+            name : "wen",
+            sex : "male",
+            age : 22,
+            final : function() {
+                return x.name + " " + x.sex + " " + x.age;
+            }
+        }
+    </script>
+    
+    <!--遍历数组（使用for函数）-->
+    <p id = "demobianli">遍历数组</p>
+    <button type="button" onclick="bianlifun()">点击遍历数组</button>
+    <script>
+        function bianlifun()
+        {
+            var result;
+        var cars = ["aa","bb","cc","dd"];
+        var alength = cars.length;
+        result = "<ul>"
+        for(i = 0;i< alength;i++)
+        {
+            result += "<li>" + cars[i] + "</li>";
+        }
+        result += "</ul>";
+        document.getElementById("demobianli").innerHTML = result;
+        }
+
+    </script>
+
+    <!--遍历数组（使用foreach函数）-->
+    <p id = "demobianliforeach">遍历数组1</p>
+    <button type="button" onclick="bianliforeachfunbtn()">点击遍历数组</button>
+    <script>
+        function bianliforeachfunbtn()
+        {
+        var result;
+        var cars = ["aa","bb","cc","dd"];
+        result = "<ul>";
+        cars.forEach(bianliforeachfun);
+        
+            result += "</ul>";
+            document.getElementById("demobianliforeach").innerHTML = result;
+            function bianliforeachfun(value)
+        {
+            result += "<li>" + value + "</li>";
+        }
+        }
+    </script>
+
+
+<p id="demo1">qqq</p>
+
+<script>
+text = "";
+var numbers1 = [45, 4, 9, 16, 25];
+numbers1.forEach(myFunction)
+
+function myFunction(value, index, array) {
+  text += value * 2 + "<br>";
+  
+ document.getElementById("demo1").innerHTML = text;
+}
+</script>
+
+    <p id = "demotext"></p>
+    <form>
+        <input type="text" name="age" id="agee" value="18">
+        <input type="button" onclick="textfun()" value="查询">
+    </form>
+    <script>
+        
+        function textfun()
+        {
+            var age1=document.getElementById("agee").value;
+            var text = (age1 < 18) ? "未成年":"成年人";
+            document.getElementById("demotext").innerHTML=text;
+        }
+    </script>
+
+    <p id="demotextnew"></p>
+    <form>
+        <input type="text" id="age" value="请输入数字" onfocus="value=''" onblur="value='请输入数字'">
+        <input type="button" onclick="textnewfun()" value="查询">
+        <script>
+            function textnewfun()
+            {
+                var text;
+                var age1 = document.getElementById("age").value;
+                Number(age1);
+                if(isNaN(age1))
+                {
+                    document.getElementById("demotextnew").innerHTML = "请输入数字";
+                }
+                else
+                {
+                    text = (age1 < 18) ? "未成年":"成年人";
+                    document.getElementById("demotextnew").innerHTML = text;
+                }
+
+            }
+        </script>
+    </form>
+
+
+</body>
+</html>

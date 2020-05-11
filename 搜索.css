@@ -1,0 +1,85 @@
+ul.top
+{
+    list-style-type: none;
+}
+li.top1
+{
+    float: left;
+}
+a.top1
+{
+    display: block;
+    width: 70px;
+    text-decoration-line: none;
+}
+li.top2
+{
+    float: right;
+}
+form.zhong
+{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*搜索框位置*/
+div.sousuo
+{
+    width: 800px;
+    height: 200px;
+    
+    position: absolute;
+    top:0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    margin:auto;
+
+}
+
+/*google样式*/
+div.google
+{
+    text-align: center;
+    width: 800px;
+    height: 200px;
+    
+    position: relative;;
+    top: 200px;
+    margin: 0 auto;
+    
+}
+
+/*按钮样式*/
+input[type="submit"]
+{
+    display:block;
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+}
+/*设置输入框位置及样式*/
+input[type="text"]
+{
+    
+    display: block;
+    width: 400px;
+    height: 40px;
+    position: relative;
+    top: 70px;
+    margin: 0 auto;
+
+
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 1px gray;
+}
+
+/*搜索框点击高亮*/
+input:focus
+{
+    border-style: solid;
+    border-color:rgb(0, 132, 255);
+    box-shadow:0px 0px 3px 3px rgb(0, 132, 255);
+}
